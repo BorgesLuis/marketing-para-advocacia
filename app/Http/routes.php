@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', 'BlogController@landing');
-Route::get('/blog', 'BlogController@index');
+Route::get('/', 'BlogController@index');
+Route::get('/baixar-ebook', 'BlogController@landing');
 
 Route::get('post', 'PostController@index');
 Route::get('post/{post}', 'PostController@show');

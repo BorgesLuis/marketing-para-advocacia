@@ -10,8 +10,10 @@ namespace App\Http\Controllers;
 
 
 use App\Services\LeadService;
+use App\Services\PostService;
 use Illuminate\Http\Request;
 use App\Lead;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
 
@@ -19,10 +21,12 @@ class LeadController extends Controller
 {
 
     private $leadService;
+    private $postService;
 
-    public function __construct(LeadService $leadService)
+    public function __construct(LeadService $leadService, PostService $postService)
     {
         $this->leadService = $leadService;
+        $this->postServoce = $postService;
     }
 
     public function index()
@@ -42,7 +46,13 @@ class LeadController extends Controller
             $l->categoria = $request->categoria;
             $l->save();
         }
-        return view('blog.lead');
+
+        $nomeArq = 'ebook_mkt_conteudo.pdf';
+        $caminho = public_path(). '/download/' . $nomeArq;
+        $headers = ['Content-Type: application/pdf'];
+        redirect()->to('/');
+        return response()->download($caminho, $nomeArq, $headers);
+
     }
 
     public function destroy($id)

@@ -13,13 +13,13 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!--nome do site-->
-                    <a class="navbar-brand" href="#page-top"><img id="logo_menu" src="assets/img/logo.png"/></a>
+                    <a class="navbar-brand" href="#page-top"><img id="logo_menu" src="/assets/img/logo.png"/></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ URL::to('/blog') }}">Voltar</a></li>
+                        <li><a href="{{ URL::to('/') }}">Voltar</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -31,7 +31,7 @@
     <section id="blog" class="content">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-md-8 col-md-offset-3">
                     <h1 class="title">{{ $p->titulo }}</h1>
                     {!! html_entity_decode($p->mensagem) !!}
                 </div>

@@ -29,6 +29,9 @@ body {
 	color:#656565;
 }
 
+a {
+	text-decoration: none;
+}
 a:active {
 	outline:0;
 }

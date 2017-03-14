@@ -23,7 +23,7 @@ class BlogController extends Controller
 
     public function landing()
     {
-        return view('index');
+        return view('landing');
     }
 
     public function index()

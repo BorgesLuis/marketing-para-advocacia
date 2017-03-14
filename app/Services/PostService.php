@@ -13,7 +13,7 @@ use App\Post;
 class PostService
 {
     public function getPosts() {
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'desc')->get();
         return $posts;
     }
 }

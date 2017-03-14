@@ -6,6 +6,7 @@ use App\Services\PostService;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\View\View;
 
 class PostController extends Controller
 {
@@ -24,7 +25,7 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('blog.edit');
+        return View::make('blog.create');
     }
 
     public function store(Request $request)
