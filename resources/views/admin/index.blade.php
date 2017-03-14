@@ -3,12 +3,6 @@
 
     <section id="main-content">
         <div class="content">
-            @foreach($errors->all() as $error)
-                <div class="alert alert-danger">
-                    {{ $error }}<br/>
-                </div>
-            @endforeach
-
             <div class="row">
                 <h2>Postagens
                     <span class="">

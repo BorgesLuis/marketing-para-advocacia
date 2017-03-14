@@ -51,7 +51,7 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         $p = Post::find($id);
-        $p->nome = $request->nome;
+        $p->titulo = $request->titulo;
         $p->mensagem = $request->mensagem;
         $p->save();
         Session::flash('success', 'Post atualizado com sucesso!');

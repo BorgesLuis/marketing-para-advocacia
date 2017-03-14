@@ -4,7 +4,7 @@
         <div class="content">
             <div class="center-block text-center">
                 <h1 class="title">{{ $p->titulo }}</h1>
-                {{ $p->mensagem }}
+                {!! html_entity_decode($p->mensagem) !!}
             </div>
         </div>
     </section>

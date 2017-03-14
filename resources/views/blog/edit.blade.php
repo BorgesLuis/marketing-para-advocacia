@@ -30,7 +30,7 @@
                     <div class="form-group">
                         <div class="">
                             {!! Form::submit('Salvar', array('class' => 'btn btn-primary')) !!}
-                            <a href="{!! url('/posts') !!}" class="btn btn-danger">Cancelar</a>
+                            <a href="{!! url()->previous() !!}" class="btn btn-danger">Cancelar</a>
                         </div>
                     </div>
                 </div>
