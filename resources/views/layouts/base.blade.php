@@ -26,7 +26,7 @@
 </head>
 
 <body id="page-top">
-    <section id="container" class="fundo">
+    <section id="wrapper">
         @yield('content')
     </section>
 

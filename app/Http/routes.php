@@ -11,10 +11,15 @@
 |
 */
 
-Route::get('/', 'BlogController@index');
+Route::get('/', 'BlogController@landing');
+Route::get('/blog', 'BlogController@index');
+
+Route::get('post', 'PostController@index');
+Route::get('post/{post}', 'PostController@show');
 
 Route::post('/lead', 'LeadController@store');
 
+//------------------ Area administrativa ------------------//
 Route::get('/admin', 'AdminController@index');
 Route::post('/login', 'AdminController@doLogin');
 Route::get('/logout', 'AdminController@doLogout');
@@ -26,6 +31,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     /* CRUD Postagens */
     Route::group(['middleware' => ['role:administrador|produtor']], function () {
-        Route::resource('post', 'PostController');
+        Route::get('post/create', 'PostController@create');
+        Route::post('post', 'PostController@store');
+        Route::get('post/{post}/edit', 'PostController@edit');
+        Route::patch('post/{post}', 'PostController@update');
+        Route::delete('post/{post}', 'PostController@destroy');
     });
 });

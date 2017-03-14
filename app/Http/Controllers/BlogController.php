@@ -21,6 +21,11 @@ class BlogController extends Controller
         $this->postService = $postService;
     }
 
+    public function landing()
+    {
+        return view('index');
+    }
+
     public function index()
     {
         return view('blog.index')->with('p', $this->postService->getPosts());
