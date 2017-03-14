@@ -2,8 +2,12 @@
  * Created by joaopaulosr on 3/12/17.
  */
 
-$(document).ready(function () {
+$.getJSON("https://api.ipify.org?format=jsonp&callback=?",
+    function (json) {
+        $("#ip").val(json.ip);
+    });
 
+$(document).ready(function () {
     //Google Map
     var get_latitude = $('#google-map').data('latitude');
     var get_longitude = $('#google-map').data('longitude');
@@ -21,6 +25,9 @@ $(document).ready(function () {
             map: map
         });
     }
+
     google.maps.event.addDomListener(window, 'load', initialize_google_map);
 
 });
+
+

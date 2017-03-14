@@ -51,9 +51,10 @@
                     <br/>
                     <br/>
                     <br/>
-                    <h4 class="text-center">Se inscreva para que um de nossos especialistas entre em contato</h4>
+                    <h4 class="text-center">Se inscreva para receber conteúdos</h4>
                     <div id="scroll">
                         {!! Form::open(['id' => 'form-post', 'action' => 'LeadController@store', 'method' => 'POST', 'class' => 'form-horizontal']) !!}
+                        <input type="hidden" name="ip" id="ip"/>
                         <div class="form-group">
                             {!! Form::label('nome', 'Nome', ['class' => 'control-label']) !!}
                             <div class="">

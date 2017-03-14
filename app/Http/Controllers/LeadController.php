@@ -39,7 +39,7 @@ class LeadController extends Controller
         $l = Lead::where('email', $request->email)->first();
         if (!$l) {
             $l = new Lead();
-            $l->ip = file_get_contents('https://api.ipify.org');
+            $l->ip = $request->ip;
             $l->nome = $request->nome;
             $l->sobrenome = $request->sobrenome;
             $l->email = $request->email;
