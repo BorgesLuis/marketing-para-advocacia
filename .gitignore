@@ -4,6 +4,6 @@
 Homestead.yaml
 Homestead.json
 /.idea/
-.composer.phar
+composer.phar
 .env
-
+error_log
